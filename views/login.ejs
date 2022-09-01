@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link href="./stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" defer src="./javascripts/login.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1>Login</h1>
+
+      <form action="/login" method="POST" class="login_form">
+        <div class="input_container">
+          <div class="input_box">
+            <h5>Email</h5>
+            <input type="text" name="email" id="user-mail" autocomplete />
+          </div>
+          <div class="input_box">
+            <h5>Password</h5>
+            <input type="password" name="password" id="user-password" autocomplete />
+          </div>
+        </div>
+
+        <input type="submit" id="btn-login" class="btn-primary btn_login" value="Login" />
+      </form>
+    </section>
+
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>

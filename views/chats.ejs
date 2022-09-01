@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Chat</title>
+
+    <link href="./stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="./socket.io/socket.io.js"></script>
+    <script type="module" defer src="./javascripts/chat.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="active-link">Group Chat</a>
+      <a href="/user-list">Manage Users</a>
+      <a href="/docs-list">Manage Documents</a>
+      <a id="logout-user" href="/logout">Logout</a>
+    </nav>
+
+    <section>
+      <!-- Chat -->
+      <div class="group_chat">
+        <div class="group_chat-header">Group Chat <button>X</button></div>
+        <div class="group_chat-message">
+          <!-- Chat message -->
+          <!-- prettier-ignore -->
+          <% if(chatbox.length !== 0){ 
+              chatbox.forEach(el => {
+          %>
+
+          <div class="message">
+            <span>[<%=el.date%>]</span>
+            <span><%=el.name%> :</span>
+            <span><%=el.message%></span>
+          </div>
+
+          <% }) } %>
+        </div>
+        <div class="group_chat-footer">
+          <h5 id="show-user"><%=user%></h5>
+          <form>
+            <input type="text" id="chat-txtbox" class="input-txtbox chat_txtbox" />
+            <span>
+              <button id="btn-send-message" class="btn-confirm fw-bold">Send</button>
+              <button id="" class="btn-confirm" hidden>Refresh</button>
+            </span>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>

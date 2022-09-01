@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <link href="./stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="./javascripts/register.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1>Register</h1>
+
+      <form action="/register" method="post" class="login_form">
+        <div class="input_container">
+          <div class="input_box">
+            <h5>Full Name</h5>
+            <input type="text" name="name" id="full-name" />
+          </div>
+          <div class="input_box">
+            <h5>Email</h5>
+            <input type="text" name="email" id="email-registration" />
+          </div>
+          <div class="input_box">
+            <h5>Password</h5>
+            <input type="password" name="password" id="password-registration" autocomplete />
+          </div>
+          <div class="input_box">
+            <h5>Confirm Password</h5>
+            <input type="password" name="confirm_pass" id="cnfrm-password" autocomplete />
+          </div>
+        </div>
+
+        <input type="submit" id="btn-register" class="btn-primary btn_register" value="Register" />
+      </form>
+    </section>
+
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>

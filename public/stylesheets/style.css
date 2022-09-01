@@ -1,0 +1,893 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+/* *{
+  border: solid 1px red;
+} */
+
+/********************************************/
+/* Component */
+
+.form-input {
+  border: solid 1px;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  border: solid 2px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: solid 2px;
+  border-radius: 15px;
+  background: #66ffff;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-confirm {
+  border: solid 2px;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 8px;
+  width: 100px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-confirm:hover {
+  border: solid 3px blue;
+}
+
+.input-txtbox {
+  height: 20px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 5px;
+  overflow: hidden;
+  border: solid 1px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+nav a {
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  border: solid 1px;
+  background: #c5c9c9;
+}
+
+nav a:hover {
+  background: white;
+}
+
+.tbl_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 10px;
+  overflow: hidden;
+  border: solid 1px;
+}
+
+.tbl_content {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+}
+
+.tbl_header {
+  background: #cccccc;
+  height: 33px;
+}
+
+.tbl_content span {
+  padding: 5px;
+  text-align: center;
+}
+
+.tbl_element:nth-child(odd) {
+  background: #f0f2f2;
+}
+
+.active-link {
+  background: #ffffff;
+  cursor: default;
+}
+
+.action_link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.modal_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #ffffff;
+  text-align: center;
+  border: solid 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 10px;
+  width: 20%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.modal_header {
+  border: solid 1px;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+}
+
+.modal_header span {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.modal_header button {
+  border: solid 1px;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.modal_body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.modal_img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/***********************************/
+/* Error modal / Alert */
+
+.error_message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000080;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error_modal {
+  text-align: center;
+}
+
+.error_header {
+  background: rgb(255, 54, 54);
+  color: white;
+}
+
+.error_body {
+  background: white;
+}
+
+.error_warning-icon {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.error_header,
+.error_body {
+  padding: 10px;
+}
+
+/****************************************/
+/* Success Alert */
+
+.success_message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000080;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success_modal {
+  text-align: center;
+}
+
+.success_header {
+  background: #20b41b;
+  color: white;
+}
+
+.success_body {
+  background: white;
+}
+
+.success_warning-icon {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.success_header,
+.success_body {
+  padding: 10px;
+}
+
+
+/***************************************/
+/* Loading component */
+
+.loading_message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000080;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_modal {
+  text-align: center;
+}
+
+.loading_header {
+  color: white;
+}
+
+.loading_body {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px !important;
+}
+
+.loading_header,
+.loading_body {
+  padding: 10px;
+}
+
+.loading_body-icon {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #13b336;
+  border-bottom: 16px solid #13b336;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: 0;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/**************************************/
+/* File Modal Form */
+.file_container {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  gap: 12px;
+}
+
+.file_form {
+  display: flex;
+  gap: 12px;
+}
+
+.file_form span {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file_form span input {
+  width: 100%;
+  height: 24px;
+  padding: 16px;
+}
+
+/* Group Chat Component */
+
+.group_chat {
+  width: 100%;
+  margin-top: 90px;
+  box-sizing: border-box;
+  text-align: center;
+  border: solid 1px;
+}
+
+.group_chat-header {
+  padding: 12px;
+  position: relative;
+  border: solid 1px;
+}
+
+.group_chat-header button {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  padding: 12px;
+  height: 90%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid 1px;
+  font-size: 16px;
+}
+
+.group_chat button {
+  float: right;
+}
+
+.group_chat-message {
+  height: 300px;
+  overflow-y: auto;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.message span {
+  padding: 0;
+}
+
+.group_chat-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: solid 1px;
+}
+
+.group_chat-footer form {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  height: 50px;
+  margin: 0;
+  gap: 10px;
+}
+
+.group_chat-footer form input {
+  height: 30px;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 12px;
+  width: 100%;
+}
+
+.group_chat-footer form span {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 0;
+}
+
+/* Welcome Page */
+.start_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.start_content a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Login page */
+.login_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  width: 40%;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 76%;
+}
+
+.input_box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  text-align: right;
+  gap: 10px;
+}
+
+.input_box input {
+  height: 40px;
+  border-radius: 8px;
+  border: solid 2px;
+  padding: 10px;
+}
+
+.btn_login {
+  margin: auto;
+}
+
+/* Register */
+.btn_register {
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* User List */
+span {
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+
+/* Sharing User */
+.sharing_user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sharing_user {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 60px;
+  gap: 30px;
+  height: 100px;
+}
+
+.sharing_user select {
+  height: 30px;
+  width: 300px;
+}
+
+/* Show only page on pc*/
+.message-mobile {
+  display: block;
+  text-align: center;
+  margin-top: 100px;
+}
+
+section {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section h1 {
+    margin-top: 90px;
+  }
+
+  .message-mobile {
+    display: none;
+  }
+}
+
+/********************************************/
+/* Utilties */
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fw-light {
+  font-weight: 100;
+}
+
+.fs1 {
+  font-size: 32px;
+}
+
+.fs2 {
+  font-size: 26px;
+}
+
+.fs3 {
+  font-size: 22px;
+}
+
+.fs4 {
+  font-size: 16px;
+}
+
+.fs5 {
+  font-size: 13px;
+}
+
+.fs6 {
+  font-size: 11px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.px1 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pl1 {
+  padding-left: 20px;
+}
+
+.pl2 {
+  padding-left: 15px;
+}
+
+.pl3 {
+  padding-left: 12px;
+}
+
+.pl4 {
+  padding-left: 10px;
+}
+
+.mt1 {
+  margin-top: 20px;
+}
+
+.mt2 {
+  margin-top: 15px;
+}
+
+.mt3 {
+  margin-top: 12px;
+}
+
+.mb1 {
+  margin-bottom: 20px;
+}
+
+.mb2 {
+  margin-bottom: 15px;
+}
+
+.mb3 {
+  margin-bottom: 12px;
+}
+
+.mr1 {
+  margin-right: 20px;
+}
+
+.mr2 {
+  margin-right: 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.border1 {
+  border: solid 1px;
+}
+
+.border2 {
+  border: solid 2px;
+}
+
+.border3 {
+  border: solid 3px;
+}
+
+.border-rad1 {
+  border-radius: 10px;
+}
+
+.border-rad2 {
+  border-radius: 8px;
+}
+
+.border-rad3 {
+  border-radius: 6px;
+}
+
+.border-rad4 {
+  border-radius: 4px;
+}
+
+.of-hidden {
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-start{
+  justify-content: flex-start;
+}
+
+.align-start{
+  align-items: flex-start;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-left {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.text-decor {
+  text-decoration: none;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.text-red{
+  color:#f53434
+}
+
+.txt-decor-none {
+  text-decoration: none;
+}
+
+.bg-white {
+  background: #ffffff;
+}
+
+.bg-dark {
+  background: #000000;
+}
+
+/* Pop Up Header Color */
+
+.popup-primary {
+  background: #426efd;
+}
+
+.popup-success {
+  background: #03c003;
+}
+
+.hidden{
+  opacity: 0;
+}
+
+/* 
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+This is for specifity. this one override the style
+of existing style css of an element. since we cannot use inline-style we use !important
+
+*/
+
+.upload_btn {
+  height: 30px !important;
+  border-radius: 5px !important;
+}
+
+.chat_txtbox {
+  border: solid 2px !important;
+}
+
+.margin_top-logout {
+  margin-top: 70px !important;
+}
+
+.share_tbl {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.upload_header {
+  width: 100% !important;
+  display: flex !important;
+  gap: 12px !important;
+}
+
+.add_share-btn {
+  background: #b3b3b3 !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.tbl_list-padding {
+  text-align: left !important;
+  padding-left: 20px !important;
+}
+
+.add_upload-btn {
+  height: 30px !important;
+  border-radius: 5px !important;
+}
+
+.file_modal {
+  width: 40% !important;
+  height: 300px !important;
+}
+
+.file_description-title {
+  width: 200px;
+}
+
+.file_upload-title {
+  padding-left: 10px !important;
+  padding-right: 55px !important;
+}
+
+.choose_file-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold !important;
+  padding: 0 !important;
+}
+
+.padding_file-form {
+  padding-right: 50px;
+}
+
+.upload_file-modal {
+  width: 40% !important;
+  height: 300px !important;
+}
+
+.file_modal-footer {
+  display: flex !important;
+  justify-content: justify-start !important;
+  padding-left: 40px !important;
+}
+
+.footer_form-submit {
+  display: flex;
+  gap: 35px;
+}
+
+.upload_now-btn,
+.upload_cancel-btn {
+  font-weight: bold !important;
+  width: 110px !important;
+  background: #b3b3b3 !important;
+}

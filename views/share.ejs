@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share Documents</title>
+
+    <link href="../../stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" defer src="../../javascripts/share.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/chats">Group Chat</a>
+      <a href="/user-list">Manage Users</a>
+      <a href="/docs-list" class="active-link">Manage Documents</a>
+      <a id="logout-user" href="/logout">Logout</a>
+    </nav>
+
+    <section>
+      <!-- Uploads -->
+      <span class="upload_header"
+        ><h1>Upload Sharing:</h1>
+        <h1 id="upload-title" class="fw-light"><%=filename%></h1></span>
+
+      <div class="tbl_list share_tbl">
+        <div class="user_name tbl_content">
+          <span class="tbl_header tbl-fileshared-label">Shared User</span>
+          <% renderFileSharedToUser.forEach(file => {  
+            //Show user name
+            users.forEach(userId => { 
+
+            // sharedTo user Id
+            if(userId._id.toString() === file.file.sharedTo) {
+          %>
+            <span class="tbl_element"><%=userId.name%></span>
+          <% } }) }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+        <div class="tbl_content">
+          <span class="tbl_header tbl-fileshared-action">Action</span>
+          <% renderFileSharedToUser.forEach(file => { 
+            //Get user id to assign in data 
+            users.forEach(userId => { 
+
+            // sharedTo user Id
+            if(userId._id.toString() === file.file.sharedTo) {
+          %>
+            <span class="tbl_element"><a href="#" class="action_link action_remove-share" data-file="<%=file.file.fileId%>" data-userid="<%=userId._id%>">Remove</a></span>
+          <% } }) }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+      </div>
+
+      <!-- Share Uploads -->
+      <span class="w100"><h1>Add Sharing</h1></span>
+
+      <div class="sharing_user-container border1 w100 border-rad1">
+        <div class="sharing_user px1">
+          <h4>Choose User:</h4>
+          <select id="user-lists" class="border2 border-rad4 text-center">
+            <!-- <option>J Bose</option>
+			  		<option>HR</option>
+			  		<option>Harsh Zaven</option> -->
+            <% users.forEach(user => { 
+              if(user.email !== userMail) { 
+            %>
+              <option value="<%=user._id%>"><%=user.name%></option> 
+            <% } }) %>
+          </select>
+          <button class="btn-secondary add_share-btn">Add Share</button>
+        </div>
+      </div>
+    </section>
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>

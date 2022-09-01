@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Success</title>
+
+    <link href="./stylesheets/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/chats">Group Chat</a>
+      <a href="/user-list">Manage Users</a>
+      <a href="/docs-list">Manage Documents</a>
+      <a id="logout-user" href="/logout" >Logout</a>
+    </nav>
+
+    <section>
+      <h1>Login Successful</h1>
+
+      <h5>
+        Welcome !
+        <b id="show-user"><%=email%></b>
+      </h5>
+    </section>
+
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>

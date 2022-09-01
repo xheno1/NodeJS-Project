@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User</title>
+
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" defer src="../javascripts/edit-user.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/chats">Group Chat</a>
+      <a href="/user-list" class="active-link">Manage Users</a>
+      <a href="/docs-list">Manage Documents</a>
+      <a id="logout-user" href="/logout">Logout</a>
+    </nav>
+
+    <section>
+      <div>
+        <h1>Edit User Information</h1>
+        <% if(userMail === email) { %>
+          <h5 class="text-red">Updating your email will log you out!</h3>
+        <% } %>
+      </div>
+
+      <form class="login_form">
+        <div class="input_container">
+          <div class="input_box">
+            <h5>Full Name</h5>
+            <input type="text" id="user-edit-fullname" value="<%=fullname%>"/>
+          </div>
+          <div class="input_box">
+            <h5>Email</h5>
+            <input type="email" id="user-edit-email" value="<%=email%>"/>
+          </div>
+        </div>
+
+        <input type="button" id="update-user-info" class="btn-primary btn_login" value="Save">
+      </form>
+
+
+    </section>
+
+    <h1 class="message-mobile">
+      This page only works on large screen (768px or more)
+    </h1>
+  </body>
+</html>

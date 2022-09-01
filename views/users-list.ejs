@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List</title>
+
+    <link href="./stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" defer src="./javascripts/manage-users.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/chats">Group Chat</a>
+      <a href="#" class="active-link">Manage Users</a>
+      <a href="/docs-list">Manage Documents</a>
+      <a id="logout-user" href="/logout">Logout</a>
+    </nav>
+
+    <section>
+      <span class="w100 pl1"><h1>Users</h1></span>
+
+      <div class="user_list tbl_list">
+        <div class="user_name tbl_content">
+          <span class="tbl_header tbl_list-padding tbl-user-list">Name</span>
+          <% userList.forEach( el => { %>
+          <span class="tbl_element tbl_list-padding"><%=el.name%></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+        <div class="user_mail tbl_content">
+          <span class="tbl_header tbl-email-list">User Email ID</span>
+          <% userList.forEach( el => { %>
+          <span class="tbl_element tbl_list-padding"><%=el.email%></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+        <div class="user_option tbl_content">
+          <span class="tbl_header tbl-action-list">&nbsp;</span>
+          <% userList.forEach( el => { %>
+          <span class="tbl_element tbl-user-data">
+            <a href="/user-list/<%=el.id%>" class="action_link action_link-edit">Edit</a>
+            <% if(el.email !== userMail) { %> |
+            <!-- Should open modal -->
+            <a href="#" class="action_link action_link-delete" data-email="<%=el.id%>">Delete</a>
+            <% } %>
+          </span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>

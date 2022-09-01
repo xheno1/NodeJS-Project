@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Documents</title>
+
+    <link href="./stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" defer src="./javascripts/manage-docs.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/chats">Group Chat</a>
+      <a href="/user-list">Manage Users</a>
+      <a href="#" class="active-link">Manage Documents</a>
+      <a id="logout-user" href="/logout">Logout</a>
+    </nav>
+
+    <section class="mb1">
+      <!-- Uploads -->
+      <span class="w100 pl4"><h1>My Uploads</h1></span>
+
+      <div class="user_list tbl_list">
+        <div class="user_name tbl_content">
+          <span class="tbl_header tbl-upload-label-header">Label</span>
+          <% files.forEach(el => { %>
+            <span class="tbl_element tbl-upload-label" data-file=""><%=el.file.fileLabel%></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+        <div class="user_mail tbl_content">
+          <span class="tbl_header tbl-upload-filename-header">File Name</span>
+          <% files.forEach(el => { %>
+            <span class="tbl_element tbl-upload-filename"><a href="/docs-list/myfile/<%=el.file.fileId%>"><%=el.file.fileName%></a></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+        <div class="user_option tbl_content">
+          <span class="tbl_header tbl-upload-action-header">Action</span>
+          <% files.forEach(el => { %>
+            <span class="tbl_element tbl-upload-action"><a href="#" class="action_link action_link-edit" data-filelabel="<%=el.file.fileLabel%>" data-file="<%=el.file.fileId%>">Edit</a> | <a href="#" class="action_link action_link-delete" data-filelabel="<%=el.file.fileLabel%>" data-file="<%=el.file.fileId%>">Delete</a> |  <a href="/docs-list/share/<%=el.file.fileId%>" class="action_link action_link-share" data-filelabel="<%=el.file.fileLabel%>">Share</a></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+      </div>
+
+      <!-- Share Uploads -->
+      <span class="w100 pl4"><h1>Shared Uploads</h1></span>
+
+      <div class="user_list tbl_list">
+        <div class="user_name tbl_content">
+          <span class="tbl_header tbl-shared-label-header">Label</span>
+          <% sharedFiles.forEach( file => { %>
+            <span class="tbl_element tbl-shared-label"><%=file.file.fileLabel%></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element"><button id="upload-modal" class="btn-primary upload_btn">+ Add Upload</button></span>
+        </div>
+        <div class="user_mail tbl_content">
+          <span class="tbl_header tbl-shared-filename-header">File Name</span>
+          <% sharedFiles.forEach( file => { %>
+            <span class="tbl_element tbl-shared-filename"><a href="/docs-list/sharedfile/<%=file.file.fileId%>"><%=file.file.fileName%></a></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+        <div class="user_option tbl_content">
+          <span class="tbl_header tbl-shared-by-header">Shared by</span>
+          <% sharedFiles.forEach( file => { %>
+            <span class="tbl_element tbl-shared-by"><%=file.email%></span>
+          <% }) %>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+          <span class="tbl_element">&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="message-mobile">This page only works on large screen (768px or more)</h1>
+  </body>
+</html>
