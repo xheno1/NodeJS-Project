@@ -18,5 +18,9 @@ Communication Application is a project made during our
 
 ## Demo
 
-https://training-projects.herokuapp.com/
+Please note: The site will be move soon as heroku will start removing the free tier
+
+Starting November 28th, 2022, free Heroku Dynos, free Heroku Postgres, and free Heroku Data for Redis® will no longer be available.
+
+Project Link: https://training-projects.herokuapp.com/
 
